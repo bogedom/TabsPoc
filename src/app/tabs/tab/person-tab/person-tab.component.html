@@ -1,0 +1,30 @@
+<div class="col-lg-3 col-md-5 col-sm-10">
+  <br>
+  <label for="firstname">
+    First name:
+  </label>
+  <input id="firstname" class="form-control" [(ngModel)]="data.firstname">
+  <label for="lastname">
+    Last name:
+  </label>
+  <input id="lastname" class="form-control" [(ngModel)]="data.lastname">
+  <br>
+  <button type="button" class="btn btn-primary" (click)="open(content)">Launch</button>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>First name: {{data.firstname}}</p>
+    <br>
+    <p>Last name: {{data.lastname}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
