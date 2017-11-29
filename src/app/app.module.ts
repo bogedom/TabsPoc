@@ -12,6 +12,9 @@ import { TabLinkComponent } from './tabs/tab/tab-link/tab-link.component';
 import { TabContentComponent } from './tabs/tab/tab-content/tab-content.component';
 import {RouterModule, Routes} from '@angular/router';
 import {TabContentDirective} from './tabs/tab/tab-content.directive';
+import {SignalRService} from './signalr.service';
+import { ClockComponent } from './clock/clock.component';
+import {HttpModule, JsonpModule} from '@angular/http';
 
 
 const routes: Routes = [
@@ -26,16 +29,19 @@ const routes: Routes = [
     TabsComponent,
     TabLinkComponent,
     TabContentComponent,
-    TabContentDirective
+    TabContentDirective,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
+    JsonpModule,
     RouterModule.forRoot(routes),
     NgbModule.forRoot(),
     NgbTabsetModule
   ],
-  providers: [TabService],
+  providers: [TabService, SignalRService],
   entryComponents: [ PersonTabComponent, CityTabComponent ],
   bootstrap: [AppComponent]
 })

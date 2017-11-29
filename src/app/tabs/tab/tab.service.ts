@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {AppTab} from './tab.model';
 import {PersonTabComponent} from './person-tab/person-tab.component';
 import {CityTabComponent} from './city-tab/city-tab.component';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class TabService {
